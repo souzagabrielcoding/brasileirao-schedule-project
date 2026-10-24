@@ -12,3 +12,27 @@ brasileirao-schedule-project = "brasileirao_schedule_project:main"
 [build-system]
 requires = ["uv_build>=0.13.5,<0.14.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.17.2",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = [
+    "E",   # Erros de estilo
+    "F",   # Erros detectáveis pelo Pyflakes
+    "I",   # Organização dos imports
+    "UP",  # Modernização da sintaxe Python
+    "B",   # Possíveis bugs
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra"
