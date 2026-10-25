@@ -1,50 +1,48 @@
-﻿# Diário de Desenvolvimento — Brasileirão Schedule Project
-
-## Objetivo
-Criar uma aplicação Python para coletar dados do Campeonato Brasileiro e estimar as distâncias percorridas pelos clubes durante a temporada.
+# Diário de Desenvolvimento — Brasileirão Schedule Project
 
 ## Etapas concluídas
 
-### 1. Preparação do ambiente
-- Git instalado e validado.
-- uv instalado e validado.
-- Python 3.15.1 instalado e selecionado para o projeto.
+### 1. Preparação das ferramentas
+Git, uv e Python 3.15.1 instalados e validados.
 
 ### 2. Inicialização do projeto
-- Projeto inicializado com uv no diretório do repositório.
-- Ambiente virtual `.venv` criado e validado.
-- Versão do Python fixada em `.python-version`.
-- Dependências e configurações centralizadas em `pyproject.toml` e `uv.lock`.
+Projeto criado com uv, versão do Python fixada e ambiente virtual `.venv` funcionando.
 
 ### 3. Controle de versão
-- Repositório Git inicializado.
-- Identidade local do Git configurada.
-- Repositório remoto do GitHub configurado.
-- Primeiro commit criado.
-- Branch principal renomeada para `main` e publicada no GitHub.
+Repositório Git inicializado, remoto `origin` configurado, identidade local definida e primeiro commit criado. A branch foi renomeada para `main` e publicada no GitHub.
 
 ### 4. Ferramentas de qualidade
-- Ruff e pytest adicionados como dependências de desenvolvimento.
-- Regras iniciais de lint e formatação configuradas.
-- Diretório `tests/` criado com um teste inicial de configuração.
-- Ruff e pytest executados com sucesso após a formatação.
+Ruff e pytest instalados e validados. Regras de lint e formatação configuradas. O teste inicial de infraestrutura passou.
 
-### 5. Organização e documentação
-- README inicial criado com objetivo, escopo, tecnologias e status.
-- `.gitignore` configurado para ignorar ambiente virtual, caches, arquivos de build e segredos.
-- `AGENTS.md` criado com orientações para desenvolvimento, testes, documentação e Git.
-- Codificação do README verificada: os bytes dos caracteres acentuados são compatíveis com UTF-8; a leitura com `Get-Content -Encoding utf8` exibiu o texto corretamente.
+## Etapa 5 — Documentação e organização
 
-## Decisões técnicas atuais
-- `uv` será utilizado para gerenciar o ambiente Python e as dependências.
-- Ruff será utilizado para lint e formatação.
-- pytest será utilizado para testes automatizados.
-- A metodologia de cálculo das distâncias ainda não foi definida.
-- A fonte dos dados do campeonato ainda não foi escolhida.
+**Status:** Em andamento.
 
-## Pendências
-1. Revisar e completar as instruções de uso do README.
-2. Confirmar o estado final do Git e revisar os arquivos alterados.
-3. Executar as verificações de qualidade.
-4. Criar um commit das alterações de configuração e documentação, após revisão.
-5. Definir fonte dos dados, localidades dos clubes e estádios, metodologia de distância e escopo da temporada.
+### 5.1 Revisão do README
+- Conteúdo inicial criado com objetivo, escopo, tecnologias e status.
+- Identificada uma possível inconsistência na exibição de caracteres acentuados no PowerShell.
+- Próximo passo: verificar os bytes do arquivo antes de decidir como corrigir a codificação.
+
+### Estado do Git
+As alterações em `pyproject.toml` e `uv.lock`, além do diretório `tests/`, ainda não foram commitadas. O último commit é `586595d`, publicado na branch `main`.
+
+### Próximos passos
+1. Corrigir ou validar a codificação do README.
+2. Revisar a documentação e criar instruções permanentes para o agente do Antigravity.
+3. Executar as verificações finais.
+4. Criar um commit com as configurações de qualidade do projeto.
+5. Definir a fonte dos dados e a metodologia de cálculo das distâncias.
+
+## 6. Ambiente de notebooks e inventário de dependências
+
+- `ipykernel` adicionado ao grupo de desenvolvimento para executar notebooks no ambiente virtual do projeto.
+- Kernel Jupyter registrado com o nome interno `brasileirao-schedule` e o nome de exibição `Brasileirão Schedule Project (.venv)`.
+- Pasta `notebooks/` criada para exploração e prototipagem.
+- Arquivo `DEPENDENCIES.md` criado para documentar as dependências diretas, suas finalidades e as ferramentas de desenvolvimento.
+- `uv tree` executado para inspecionar as dependências diretas e transitivas.
+
+### Próximos passos
+1. Confirmar o nome e a localização do notebook de exploração.
+2. Baixar o CSV para `data/raw/` e inspecionar os dados no notebook.
+3. Definir a lógica de cálculo dos deslocamentos.
+4. Transformar a lógica validada em módulos Python e testes automatizados.
